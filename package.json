@@ -1,0 +1,40 @@
+{
+  "name": "young",
+  "version": "0.0.1",
+  "repository": {},
+  "scripts": {
+    "dev": "webpack-dev-server --progress --profile --colors --hot",
+    "build": "webpack --progress --profile --colors"
+  },
+  "dependencies": {
+    "react-dom": "^15.3.0"
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.4",
+    "babel-plugin-react-transform": "^2.0.2",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
+    "bootstrap": "^4.0.0-alpha.2",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.22.0",
+    "node-sass": "^3.8.0",
+    "react": "^15.3.0",
+    "react-transform-catch-errors": "^1.0.2",
+    "react-transform-hmr": "^1.0.4",
+    "redbox-react": "^1.3.0",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "description": "young's personal project for practice",
+  "main": "webpack.config.js",
+  "keywords": [
+    "react",
+    "webpack"
+  ],
+  "author": "young",
+  "license": "ISC"
+}
