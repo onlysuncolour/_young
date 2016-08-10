@@ -29,12 +29,14 @@ module.exports = {
   module: {
     loaders: [
       {test: /\.jsx?$/, loader: 'babel', include: APP_PATH, query: {presets: ['es2015', 'react']}},
-      {test: /\.css$/, loader: 'style!css'}
+      {test: /\.css$/, loader: 'style!css'},
+      {test: /\.scss$/,loaders: ['style', 'css', 'sass']}
     ]
-  },
+  }
+  ,
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'My first react app'
+      title: '_YOUNG'
     })
   ]
 }
