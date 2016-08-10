@@ -1,7 +1,7 @@
 import '../node_modules/bootstrap/scss/bootstrap.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, Link, BrowserHistory} from 'react-router'
+import {Router, Route, Link, browserHistory} from 'react-router'
 
 class App extends React.Component{
   constructor() {
@@ -12,6 +12,8 @@ class App extends React.Component{
       <div className="container">
         <span> Hello World! </span>
         <li><Link to="/about"> about </Link></li>
+        <li><Link to="/test"> test </Link></li>
+        <li><Link to="/user"> user </Link></li>
       </div>
     )
   }
@@ -19,12 +21,27 @@ class App extends React.Component{
 
 class About extends React.Component{
   constructor() {
+    console.log('123')
+    super();
+  }
+  render() {
+    return (
+      <div className="container">
+        <span> Hello About! </span>
+      </div>
+    )
+  }
+};
+
+class Test extends React.Component{
+  constructor() {
+    console.log('123456')
     super();
   }
   render() {
     return (
       <div className="about">
-        <span> Hello About! </span>
+        <span> Hello test! </span>
       </div>
     )
   }
@@ -52,18 +69,18 @@ const Users = React.createClass({
 })
 
 const User = React.createClass({
-  componentDidMount() {
-    this.setState({
-      // route components are rendered with useful information, like URL params
-      user: findUserById(this.props.params.userId)
-    })
-  },
+  // componentDidMount() {
+  //   this.setState({
+  //     // route components are rendered with useful information, like URL params
+  //     user: findUserById(this.props.params.userId)
+  //   })
+  // },
 
   render() {
     return (
       <div>
-        <h2>{this.state.user.name}</h2>
-        {/* etc. */}
+        <h2> 1234567 </h2>
+        // {/* etc. */}
       </div>
     )
   }
@@ -74,12 +91,14 @@ document.body.appendChild(app);
 // ReactDOM.render(<App />, app);
 
 ReactDOM.render((
-  <Router history={BrowserHistory}>
+  <Router history={browserHistory}>
     <Route path="/" component={App}>
       <Route path="about" component={About}/>
-      <Route path="users" component={Users}>
-        <Route path="/user/:userId" component={User}/>
+      <Route path="user" component={User}>
+        // <Route path="/user/:userId" component={User}/>
       </Route>
+    </Route>
+    <Route path="/test" component={Test}>
     </Route>
   </Router>
 ), app)
