@@ -29,6 +29,7 @@ module.exports = {
   module: {
     loaders: [
       {test: /\.jsx?$/, loader: 'babel', include: APP_PATH, query: {presets: ['es2015', 'react']}},
+      {test: /\.js?$/, loader: 'babel', include: APP_PATH, query: {presets: ['es2015']}},
       {test: /\.css$/, loader: 'style!css'},
       {test: /\.scss$/,loaders: ['style', 'css', 'sass']}
     ]
