@@ -1,7 +1,6 @@
 import '../node_modules/bootstrap/scss/bootstrap.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import {Router, Route, Link, browserHistory} from 'react-router'
 import {urlRouter} from './components/router.jsx'
 
 

@@ -1,4 +1,3 @@
-import {Main} from './main';
-import {App,About,Test,Users,User} from './test1'
+import {Header} from "./header"
 
-module.exports = {Main, App, About, Test, Users, User}
+module.exports = {Header}
