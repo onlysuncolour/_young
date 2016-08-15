@@ -36,8 +36,6 @@ module.exports = {
   }
   ,
   plugins: [
-
-    // "react-html-attrs",
     new HtmlWebpackPlugin({
       title: '_YOUNG'
     })
