@@ -1,19 +1,17 @@
 import React from 'react';
 import {Link} from 'react-router'
-import {Header} from './header/header'
 
-class Main extends React.Component{
+class Login extends React.Component{
   constructor() {
     super();
   }
   render() {
     return (
       <div>
-        <Header>  </Header>
-        {this.props.children}
+        123
       </div>
     )
   }
-}
+};
 
-module.exports = {Main}
+module.exports = {Login}

@@ -7,9 +7,13 @@ var APP_PATH = path.resolve(ROOT_PATH, 'app');
 var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 
 module.exports = {
-  entry: {
-    app: path.resolve(APP_PATH, 'index.jsx')
-  },
+  // entry: {
+  //   app: path.resolve(APP_PATH, 'index.jsx')
+  // },
+  entry: [
+    'webpack/hot/only-dev-server',
+    path.resolve(APP_PATH, 'index.jsx')
+  ],
   output: {
     path: BUILD_PATH,
     filename: 'bundle.js'
@@ -24,7 +28,7 @@ module.exports = {
     progress: true
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx','.json']
   },
   module: {
     loaders: [
@@ -36,8 +40,9 @@ module.exports = {
   }
   ,
   plugins: [
-    new HtmlWebpackPlugin({
-      title: '_YOUNG'
-    })
+    // new HtmlWebpackPlugin({
+    //   title: '_YOUNG'
+    // })
+    // new webpack.NoErrorsPlugin()
   ]
 }

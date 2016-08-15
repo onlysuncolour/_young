@@ -1,24 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router'
-
-class App extends React.Component{
-  constructor() {
-    super();
-  }
-  render() {
-    return (
-      <div className="container">
-        <span> Hello World! </span>
-        <li><Link to="/about"> about </Link></li>
-        <li><Link to="/test"> test </Link></li>
-        <li><Link to="/user"> user </Link></li>
-        <li><Link to="/main"> Main </Link></li>
-        {this.props.children}
-        <About />
-      </div>
-    )
-  }
-};
 
 class About extends React.Component{
   constructor() {
@@ -29,6 +9,7 @@ class About extends React.Component{
     return (
       <div className="container">
         <span> Hello About! </span>
+        {this.props.children}
       </div>
     )
   }
@@ -87,4 +68,4 @@ const User = React.createClass({
   }
 })
 
-module.exports = {App,About,Test,Users,User}
+module.exports = {About,Test,Users,User}
