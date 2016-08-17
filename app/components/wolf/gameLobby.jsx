@@ -1,7 +1,7 @@
 import React from 'react';
 
-import RoomList from './roomList.json'
-import Versions from './versions.json'
+import RoomList from '../data/roomList.json'
+import Versions from '../data/versions.json'
 
 class GameLobby extends React.Component{
   constructor() {
@@ -16,7 +16,6 @@ class GameLobby extends React.Component{
 
   }
   componentDidMount() {
-    console.log(123)
     this.getVersions();
     this.getRoomList();
   }
@@ -28,15 +27,19 @@ class GameLobby extends React.Component{
     this.datas.roomList = RoomList.roomList;
   }
   showVersions() {
-    this.viList = []
+    this.viList = [];
+    this.viList.push(
+      <li style={{display: "inline"}} key="999">
+        <a href="javascript:" onClick={this.changeVersion.bind(this, undefined)}> 全部</a>
+      </li>
+    )
     for (var i = 0; i < this.datas.versions.length; i++) {
       this.viList.push(
         <li style={{display: "inline"}} key={this.datas.versions[i].id}>
-          <a onClick={this.changeVersion.bind(this, this.datas.versions[i].id)}> {this.datas.versions[i].name}</a>
+          <a href="javascript:" onClick={this.changeVersion.bind(this, this.datas.versions[i].id)}> {this.datas.versions[i].name}</a>
         </li>
       );
     }
-    this.render()
     this.showRooms();
   }
   showRooms(versionId) {
@@ -45,19 +48,17 @@ class GameLobby extends React.Component{
     for (var i = 0; i < this.datas.roomList.length; i++) {
       if(versionId == undefined || this.datas.roomList[i].versionId == versionId) {
         this.roList.push(<li key={this.datas.roomList[i].id}>
-          <a onClick={this.goRoom.bind(this, this.datas.roomList[i].id)}> {this.datas.roomList[i].name} </a>
+          <a href="javascript:" onClick={this.goRoom.bind(this, this.datas.roomList[i].id)}> {this.datas.roomList[i].name} </a>
         </li>)
       }
     }
     this.setState( {status:'2'})
-    this.render()
-    // return this.roList
   }
   changeVersion(id) {
     this.showRooms(id);
   }
   goRoom(roomId) {
-
+    
   }
   render() {
     return (

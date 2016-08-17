@@ -7,9 +7,6 @@ var APP_PATH = path.resolve(ROOT_PATH, 'app');
 var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 
 module.exports = {
-  // entry: {
-  //   app: path.resolve(APP_PATH, 'index.jsx')
-  // },
   entry: [
     'webpack/hot/only-dev-server',
     path.resolve(APP_PATH, 'index.jsx')
@@ -39,11 +36,4 @@ module.exports = {
       {test: /\.scss$/,loaders: ['style', 'css', 'sass']}
     ]
   }
-  ,
-  plugins: [
-    // new HtmlWebpackPlugin({
-    //   title: '_YOUNG'
-    // })
-    // new webpack.NoErrorsPlugin()
-  ]
 }

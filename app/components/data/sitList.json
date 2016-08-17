@@ -1,0 +1,22 @@
+{
+  "sits": [
+    {"no": 1,  "available": true, "playerId": null, "open": true},
+    {"no": 2,  "available": true, "playerId": null, "open": true},
+    {"no": 3,  "available": false, "playerId": 1, "open": true},
+    {"no": 4,  "available": true, "playerId": null, "open": true},
+    {"no": 5,  "available": false, "playerId": 2, "open": true},
+    {"no": 6,  "available": false, "playerId": 3, "open": true},
+    {"no": 7,  "available": true, "playerId": null, "open": true},
+    {"no": 8,  "available": true, "playerId": null, "open": true},
+    {"no": 9,  "available": false, "playerId": 4, "open": true},
+    {"no": 10, "available": false, "playerId": 5, "open": true},
+    {"no": 11, "available": true, "playerId": null, "open": true},
+    {"no": 12, "available": true, "playerId": null, "open": true},
+    {"no": 13, "available": false, "playerId": null, "open": false},
+    {"no": 14, "available": false, "playerId": null, "open": false},
+    {"no": 15, "available": false, "playerId": null, "open": false},
+    {"no": 16, "available": false, "playerId": null, "open": false},
+    {"no": 17, "available": false, "playerId": null, "open": false},
+    {"no": 18, "available": false, "playerId": null, "open": false}
+  ]
+}

@@ -6,8 +6,10 @@ class PlayerInfo extends React.Component{
   }
   render() {
     return (
-      <div style={{display: "inline-block",width:"20%"}}>
-        <span> Hello About! </span>
+      <div style={{display: "inline-block",width:"20%", height: "100%"}}>
+        <div>
+          <span> Hello About! </span>
+        </div>
       </div>
     )
   }

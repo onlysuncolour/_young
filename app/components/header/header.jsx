@@ -25,7 +25,8 @@ class Header extends React.Component{
               <li><Link to="/about/test"> about Test</Link></li>
               <li><Link to="/test"> test </Link></li>
               <li><Link to="/user"> user </Link></li>
-              <li><Link to="/wolf"> 狼人杀 </Link></li>
+              <li><Link to="/wolf"> wolf </Link></li>
+              <li><Link to="/room"> room </Link></li>
             </ul>
           </div>
         </div>
