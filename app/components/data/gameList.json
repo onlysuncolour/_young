@@ -1,0 +1,6 @@
+{
+  "gameList": [
+    {"id": 0, "playerId": [1,2,3,4,5,6,7,8,9,10,11,12], "playerRole": [0,0,0,0,1,1,1,1,2,3,4,5], "playerStatus": [], "roleStatus": [], "gameStatus": ""},
+    {"id": 1, "playerId": [1,2,3,4,5,6,7,8,9,10,11,12], "playerRole": [0,0,0,0,1,1,1,1,2,3,4,5], "playerStatus": [], "roleStatus": [], "gameStatus": ""}
+  ]
+}
