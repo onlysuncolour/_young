@@ -5,10 +5,20 @@ class Login extends React.Component{
   constructor() {
     super();
   }
+  handleSubmit(event) {
+    event.preventDefault();
+    
+  }
   render() {
     return (
       <div>
-        123
+        <form className="commentForm" onSubmit={this.handleSubmit}>
+          <label> username: </label>
+          <input type="text" placeholder="USERNAME" ref="username" />
+          <label> password: </label>
+          <input type="password" placeholder="password here" ref="password" />
+          <input type="submit" value="submit" />
+        </form>
       </div>
     )
   }
