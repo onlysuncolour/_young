@@ -1,24 +1,38 @@
 import React from 'react';
-import {Link} from 'react-router'
+import {Link, browserHistory} from 'react-router'
+import http from '../common/http'
 
 class Login extends React.Component{
   constructor() {
     super();
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
-  handleSubmit(event) {
-    event.preventDefault();
-    
+  sayHello () {
+    console.log("hello world");
+  }
+  handleSubmit() {
+    let user = {
+      username: this.refs.username.value,
+      password: this.refs.password.value
+    };
+    http.POST('login', user).then( (resp) => {
+      browserHistory.push('/wolf');
+    }, (err) => {
+      alert("账号或密码错误");
+    })
+    // http.POST()
+    // debugger;
   }
   render() {
+    // const self = this
     return (
       <div>
-        <form className="commentForm" onSubmit={this.handleSubmit}>
           <label> username: </label>
           <input type="text" placeholder="USERNAME" ref="username" />
           <label> password: </label>
           <input type="password" placeholder="password here" ref="password" />
-          <input type="submit" value="submit" />
-        </form>
+          <input type="button" value="submit" onClick={this.handleSubmit} />
+
       </div>
     )
   }

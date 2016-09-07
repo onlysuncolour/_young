@@ -1,7 +1,6 @@
 import {Router, Route, Link, browserHistory, IndexRoute} from 'react-router'
 import React from 'react';
 
-// import header from './header/config'
 import {Main} from './main'
 import about from './about/config'
 import login from './login/config'
