@@ -203,9 +203,9 @@ class GameProgress extends React.Component {
     for (let i = 0; i < this.params.length; i++) {
       let progressArr = this.params[i].split(' ');
       for (let j = 0; j < progressArr.length; j++) {
-        this.showProgressRender.push( <p> {progressArr[j]} </p> )
+        this.showProgressRender.push( <p key={i+""+j}> {progressArr[j]} </p> )
       }
-      this.showProgressRender.push( <p> &nbsp; </p> )
+      this.showProgressRender.push( <p key={i}> &nbsp; </p> )
     }
   }
   render() {

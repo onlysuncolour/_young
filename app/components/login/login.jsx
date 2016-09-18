@@ -16,15 +16,12 @@ class Login extends React.Component{
       password: this.refs.password.value
     };
     http.POST('login', user).then( (resp) => {
-      browserHistory.push('/wolf');
+      browserHistory.push('/');
     }, (err) => {
       alert("账号或密码错误");
     })
-    // http.POST()
-    // debugger;
   }
   render() {
-    // const self = this
     return (
       <div>
           <label> username: </label>

@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var events = require('../event').myEmitter
 
 router.post('/', function(req, res, next) {
   let loginUser = req.body;
@@ -20,6 +21,10 @@ let getObjByKey = (key, value, objList) => {
   }
   return false
 }
+
+events.on('hello', () => {
+  console.log('get Events hello');
+})
 
 let tokens = [1,2,3,4,5];
 

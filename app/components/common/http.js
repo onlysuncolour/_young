@@ -1,4 +1,5 @@
 import server from './server.config'
+import {browserHistory} from 'react-router'
 
 let GET = function (url, params) {
   let promise = new Promise(function(resolve, reject) {
@@ -10,7 +11,11 @@ let GET = function (url, params) {
         resolve(resp)
       },
       error: function(err) {
-        reject(err)
+        if ((err.status == 403 || err.status == 401) && location.pathname != '/login') {
+          browserHistory.push('/login');
+        } else {
+          reject(err)
+        }
       }
     })
   })
@@ -27,7 +32,11 @@ let POST = function (url, params) {
         resolve(resp)
       },
       error: function(err) {
-        reject(err)
+        if ((err.status == 403 || err.status == 401) && location.pathname != '/login') {
+          browserHistory.push('/login');
+        } else {
+          reject(err)
+        }
       }
     })
   })

@@ -1,14 +1,18 @@
 var express = require('express');
 var router = express.Router();
+var events = require('../event').myEmitter
 
-var tokenList = require('./login').tokens;
-
+let tokenList = [];
 router.get('*', function(req, res, next) {
-  console.log(tokenList);
+  console.log(req);
   next()
 })
 router.post('*', function(req, res, next) {
-  console.log(tokenList);
+  console.log(req);
+  events.emit('hello');
+  if (req.url != '/login') {
+    checkToken()
+  }
   next()
 })
 
