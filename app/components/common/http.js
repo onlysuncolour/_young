@@ -7,6 +7,9 @@ let GET = function (url, params) {
       url: server[window.env] + url,
       type: 'GET',
       data: params,
+      xhrFields: {
+        withCredentials: true
+      },
       success: function(resp) {
         resolve(resp)
       },
@@ -28,6 +31,9 @@ let POST = function (url, params) {
       url: server[window.env] + url,
       type: 'POST',
       data: params,
+      xhrFields: {
+        withCredentials: true
+      },
       success: function(resp) {
         resolve(resp)
       },

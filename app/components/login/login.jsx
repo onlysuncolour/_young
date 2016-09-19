@@ -2,6 +2,8 @@ import React from 'react';
 import {Link, browserHistory} from 'react-router'
 import http from '../common/http'
 
+import {SOCKETIO} from '../common/socketIo'
+
 class Login extends React.Component{
   constructor() {
     super();
@@ -16,6 +18,7 @@ class Login extends React.Component{
       password: this.refs.password.value
     };
     http.POST('login', user).then( (resp) => {
+      SOCKETIO.connect();
       browserHistory.push('/');
     }, (err) => {
       alert("账号或密码错误");

@@ -1,12 +1,23 @@
 var express = require('express');
 var router = express.Router();
-var events = require('../event').myEmitter
+var events = require('../event').myEmitter;
+
+var setCookie = require('set-cookie');
 
 router.post('/', function(req, res, next) {
+  // console.log(req);
   let loginUser = req.body;
   let userList = require('../data/users.json')
   let user = getObjByKey('username', loginUser.username, userList);
   if (!!user && user.password == loginUser.password) {
+    res.cookie("test123lasjf", "112233445566", {domain: null, path: null, httpOnly: true,secure: false})
+    // res.append('Set-Cookie', 'test123lasjf=112233445566;HttpOnly');
+    // res.setHeader("Set-Cookie", ["token=112233445566"]);
+    // setCookie('myCookie', 'the value of the cookie', {
+    //   domain: "",
+    //   res: res
+    // });
+    console.log("setCookie");
     res.send({success: true})
   } else {
     res.sendStatus(403)
@@ -22,8 +33,11 @@ let getObjByKey = (key, value, objList) => {
   return false
 }
 
+// let
+
+
 events.on('hello', () => {
-  console.log('get Events hello');
+  // console.log('get Events hello');
 })
 
 let tokens = [1,2,3,4,5];
