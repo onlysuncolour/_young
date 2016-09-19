@@ -1,4 +1,5 @@
 import React from 'react';
+import http from '../common/http'
 
 class About extends React.Component{
   constructor() {
@@ -20,10 +21,16 @@ class Test extends React.Component{
     console.log('123456')
     super();
   }
+  test() {
+    http.GET('test').then((resp) => {
+      console.log("test");
+    })
+  }
   render() {
     return (
       <div className="about">
         <span> Hello test! </span>
+        <button onClick={this.test} style={{margin:"auto", display: "block"}}> test </button>
       </div>
     )
   }

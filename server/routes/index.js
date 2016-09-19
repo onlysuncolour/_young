@@ -5,14 +5,14 @@ var events = require('../event').myEmitter
 
 let tokenList = [];
 router.get('*', function(req, res, next) {
-  console.log(req);
-  next()
+  // console.log(req);
+  // console.log(req);
+  // events.emit('checkToken', next);
 })
 router.post('*', function(req, res, next) {
   console.log(req);
-  events.emit('hello');
   if (req.url != '/login') {
-    checkToken()
+    // events.emit('checkToken', next);
   }
   next()
 })
