@@ -1,7 +1,7 @@
 /**
  * Module dependencies.
  */
-
+"use strict"
 let express = require('express');
 var routes = require('./routes/index');
 var login = require('./routes/login').router;
