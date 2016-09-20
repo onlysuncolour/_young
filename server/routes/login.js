@@ -3,7 +3,6 @@ var express = require('express');
 var router = express.Router();
 var events = require('../event').myEmitter;
 
-var setCookie = require('set-cookie');
 
 router.post('/', function(req, res, next) {
   // console.log(req);
@@ -14,10 +13,7 @@ router.post('/', function(req, res, next) {
     res.cookie("test123lasjf", "112233445566", {domain: null, path: null, httpOnly: true,secure: false})
     // res.append('Set-Cookie', 'test123lasjf=112233445566;HttpOnly');
     // res.setHeader("Set-Cookie", ["token=112233445566"]);
-    // setCookie('myCookie', 'the value of the cookie', {
-    //   domain: "",
-    //   res: res
-    // });
+
     console.log("setCookie");
     res.send({success: true})
   } else {
