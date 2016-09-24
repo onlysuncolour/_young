@@ -1,6 +1,9 @@
 import {Router, Route, Link, browserHistory, IndexRoute} from 'react-router'
 import React from 'react';
 
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+
 import {Main} from './main'
 import about from './about/config'
 import login from './login/config'
