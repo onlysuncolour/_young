@@ -1,6 +1,6 @@
 const store2 = (state = 'HELLOWORLD', action) => {
   switch (action.type) {
-    case 'HELLO_3':
+    case 'say-something':
       return action.filter
     default:
       return state

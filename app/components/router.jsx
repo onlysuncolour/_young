@@ -10,16 +10,20 @@ import about from './about/config'
 import login from './login/config'
 import wolf from './wolf/config'
 
-let store = createStore(stores);
+let store = createStore(stores,
+  {Test: {
+    text: 'hello world'
+  }}
+);
 
 var urlRouter = (
   <Provider store = {store} >
     <Router history={browserHistory}>
       <Route path="/" component={Main}>
-        <Route path="/about" component = {about.About}>
-          <Route path="/about/test" component = {about.Test} />
+        <Route path="/about" component = {about.About} >
+          <Route path="/about/test" component = {about.TestApp} />
         </Route>
-        <Route path="/Test" component = {about.Test} />
+        <Route path="/Test" component = {about.TestApp} />
         <Route path="/Users" component = {about.Users} />
         <Route path="/User" component = {about.User} />
         <Route path="/wolf" component = {wolf.Main} />

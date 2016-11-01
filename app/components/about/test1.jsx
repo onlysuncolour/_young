@@ -1,40 +1,78 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import http from '../common/http'
+import { connect } from 'react-redux'
 
 class About extends React.Component{
   constructor() {
-    console.log('123')
+    // console.log('123')
     super();
   }
+  componentDidMount() {
+    // this.state = {a : 1}
+    const {store} = this.context;
+    this.unsubscribe = store.subscribe(() =>
+      {
+        debugger;
+      }
+    );
+  }
   render() {
+    // debugger;
     return (
       <div className="container">
         <span> Hello About! </span>
         {this.props.children}
+
+        <User />
       </div>
     )
   }
 };
 
+About.contextTypes = {
+  store: React.PropTypes.object
+}
+
 class Test extends React.Component{
   constructor() {
-    console.log('123456')
+    // console.log('123456')
     super();
   }
+  componentDidMount() {
+    // this.state = {a : 1}
+    const {store} = this.context;
+    store.subscribe(this.render)
+  }
   test() {
-    http.GET('test').then((resp) => {
-      console.log("test");
-    })
+    // http.GET('test').then((resp) => {
+    //   console.log("test");
+    // })
+    debugger
   }
   render() {
+    debugger;
+    const {text, test1} = this.props
     return (
       <div className="about">
         <span> Hello test! </span>
-        <button onClick={this.test} style={{margin:"auto", display: "block"}}> test </button>
+        <button onClick={test1} style={{margin:"auto", display: "block"}}> test </button>
+        <span> {text} </span>
       </div>
     )
   }
 };
+
+
+Test.propTypes = {
+  text: PropTypes.string.isRequired,
+  test1: PropTypes.func.isRequired
+}
+
+Test.contextTypes = {
+  store: React.PropTypes.object
+}
+
+
 
 const Users = React.createClass({
   render() {
@@ -69,10 +107,18 @@ const User = React.createClass({
     return (
       <div>
         <h2> 1234567 </h2>
-        // {/* etc. */}
+         {/* etc. */}
       </div>
     )
   }
 })
 
-module.exports = {About,Test,Users,User}
+const testAction = {type: 'test'}
+
+const TestApp = connect(state=>({text: state.text}), dispatch => ({test1: () =>
+  // debugger;
+  dispatch(testAction)
+}))(Test)
+
+
+module.exports = {About,Test,Users,User, TestApp}

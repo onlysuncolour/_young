@@ -5,6 +5,7 @@ import {Header} from './header/header'
 class Main extends React.Component{
   constructor() {
     super();
+
   }
   render() {
     return (
