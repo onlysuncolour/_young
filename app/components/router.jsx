@@ -3,14 +3,14 @@ import React from 'react';
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 
-import {stores} from './common/stores'
+import {reducers} from './common/reducers'
 
 import {Main} from './main'
 import about from './about/config'
 import login from './login/config'
 import wolf from './wolf/config'
 
-let store = createStore(stores,
+let store = createStore(reducers,
   {Test: {
     text: 'hello world'
   }}

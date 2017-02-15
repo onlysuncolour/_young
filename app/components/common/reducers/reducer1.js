@@ -1,5 +1,5 @@
 
-const store = (state = {text: "hello"}, action) => {
+const reducer1 = (state = {text: "hello"}, action) => {
   switch (action.type) {
     case 'say-hello':
       return {
@@ -25,4 +25,4 @@ const store = (state = {text: "hello"}, action) => {
 }
 
 
-module.exports = {store}
+module.exports = {reducer1}

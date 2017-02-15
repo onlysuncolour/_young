@@ -1,4 +1,4 @@
-const store2 = (state = 'HELLOWORLD', action) => {
+const reducer2 = (state = 'HELLOWORLD', action) => {
   switch (action.type) {
     case 'say-something':
       return action.filter
@@ -7,4 +7,4 @@ const store2 = (state = 'HELLOWORLD', action) => {
   }
 }
 
-export default store2
+export default reducer2
