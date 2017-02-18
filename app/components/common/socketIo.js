@@ -13,8 +13,11 @@ let SOCKETIO = {
       console.log('socket connected!');
       console.log(resp);
     })
+    socket.on()
+  },
+  emit(eventName, eventData) {
+    socket.emit(eventName, eventData);
   }
 }
-
 
 module.exports = {SOCKETIO}

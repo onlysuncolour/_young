@@ -4,7 +4,7 @@ import {reducer1} from './reducers/reducer1'
 import {reducer2} from './reducers/reducer2'
 
 const reducers = combineReducers({
-  reducer,
+  reducer1,
   reducer2
 })
 

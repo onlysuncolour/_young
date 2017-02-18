@@ -6,5 +6,4 @@ const reducer2 = (state = 'HELLOWORLD', action) => {
       return state
   }
 }
-
-export default reducer2
+module.exports = {reducer2}

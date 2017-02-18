@@ -11,9 +11,12 @@ import login from './login/config'
 import wolf from './wolf/config'
 
 let store = createStore(reducers,
-  {Test: {
-    text: 'hello world'
-  }}
+  {
+    reducer1: {
+
+    },
+    reducer2: "hello world"
+  }
 );
 
 var urlRouter = (

@@ -10,7 +10,7 @@ router.get('*', function(req, res, next) {
   // events.emit('checkToken', next);
 })
 router.post('*', function(req, res, next) {
-  console.log(req);
+  // console.log(req);
   if (req.url != '/login') {
     // events.emit('checkToken', next);
   }

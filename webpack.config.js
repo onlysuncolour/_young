@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var less = require("less");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var ROOT_PATH = path.resolve(__dirname);
@@ -25,15 +26,20 @@ module.exports = {
     progress: true
   },
   resolve: {
-    extensions: ['', '.js', '.jsx','.json']
+    extensions: ['', '.js', '.jsx','.json', 'png', 'less']
   },
   module: {
     loaders: [
       {test: /\.jsx?$/, loader: 'babel', include: APP_PATH, query: {presets: ['es2015', 'react']}},
       {test: /\.js?$/, loader: 'babel', include: APP_PATH, query: {presets:  ['es2015']}},
       {test: /\.json?$/, loader: 'json'},
-      {test: /\.css$/, loader: 'style!css'},,
-      {test: /\.scss$/,loaders: ['style', 'css', 'sass']}
+      {test: /\.css$/, loader: 'style!css'},
+      {test: /\.less$/, loader: 'style!css!less'},
+      {test: /\.scss$/,loaders: ['style', 'css', 'sass']},
+  //     {test: /\.(png|jpeg|ttf|...)$/, use: [
+  //  { loader: 'url-loader', options: { limit: 8192 } }
+  //  // limit => file.size =< 8192 bytes ? DataURI : File
+  // ]}
     ]
   }
 }

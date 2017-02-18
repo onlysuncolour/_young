@@ -26,7 +26,7 @@ class Login extends React.Component{
   }
   render() {
     return (
-      <div>
+      <div id="login">
           <label> username: </label>
           <input type="text" placeholder="USERNAME" ref="username" />
           <label> password: </label>
