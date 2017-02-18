@@ -36,10 +36,7 @@ module.exports = {
       {test: /\.css$/, loader: 'style!css'},
       {test: /\.less$/, loader: 'style!css!less'},
       {test: /\.scss$/,loaders: ['style', 'css', 'sass']},
-  //     {test: /\.(png|jpeg|ttf|...)$/, use: [
-  //  { loader: 'url-loader', options: { limit: 8192 } }
-  //  // limit => file.size =< 8192 bytes ? DataURI : File
-  // ]}
+      {test: /\.png$/, loader:"url-loader?limit=10000&mimetype=image/png"},
     ]
   }
 }
