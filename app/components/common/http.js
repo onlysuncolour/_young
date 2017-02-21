@@ -55,14 +55,25 @@ let GET_fetchApi = function () {
 
 let POST = function(url, params) {
   let promise = new Promise((resolve, reject) => {
-    fetch(url, {
+    fetch(server[window.env]+url, {
       method: 'POST',
-      data: params
+      body: JSON.stringify(params),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
     }).then(resp => {
-      console.log(1,resp)
+      debugger;
+      // console.log(1,resp)
+      resp.json().then(obj => {
+        debugger;
+        obj
+      })
     }).then(resp => {
+      debugger;
       console.log(2, resp);
     }).then(resp => {
+      debugger
       console.log(3, resp);
     })
 

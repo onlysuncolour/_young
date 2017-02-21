@@ -42,6 +42,8 @@ app.use(function (req, res, next) {
     // Set to true if you need the website to include cookies in the requests sent
     // to the API (e.g. in case you use sessions)
     res.setHeader('Access-Control-Allow-Credentials', true);
+    res.setHeader('Access-Control-Allow-Methods', 'POST,GET,OPTIONS,PUT,DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Accept');
     res.setHeader('Vary',["Origin", "Accept-Encoding"]);
     res.setHeader('Transfer-Encoding',"chunked");
     // res.setHeader("Set-Cookie", ["token=112233445566"]);
