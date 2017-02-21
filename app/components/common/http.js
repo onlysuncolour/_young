@@ -25,7 +25,7 @@ let GET = function (url, params) {
   return promise;
 }
 
-let POST = function (url, params) {
+let POST2 = function (url, params) {
   let promise = new Promise(function(resolve, reject) {
     $.ajax({
       url: server[window.env] + url,
@@ -47,6 +47,26 @@ let POST = function (url, params) {
     })
   })
   return promise;
+};
+
+let GET_fetchApi = function () {
+
+}
+
+let POST = function(url, params) {
+  let promise = new Promise((resolve, reject) => {
+    fetch(url, {
+      method: 'POST',
+      data: params
+    }).then(resp => {
+      console.log(1,resp)
+    }).then(resp => {
+      console.log(2, resp);
+    }).then(resp => {
+      console.log(3, resp);
+    })
+
+  })
 }
 
 module.exports = {GET, POST}

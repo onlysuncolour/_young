@@ -13,9 +13,12 @@ import wolf from './wolf/config'
 let store = createStore(reducers,
   {
     reducer1: {
-
     },
-    reducer2: "hello world"
+    reducer2: "hello world",
+    loginStatus: {
+      isLogin: false,
+
+    }
   }
 );
 

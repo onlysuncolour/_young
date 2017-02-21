@@ -1,4 +1,3 @@
-
 const reducer1 = (state = {text: "hello"}, action) => {
   switch (action.type) {
     case 'say-hello':
@@ -24,5 +23,22 @@ const reducer1 = (state = {text: "hello"}, action) => {
   }
 }
 
+const loginStatus = (state = {isLogin: false, userInfo: {}}, action) => {
+  switch(action.type) {
+    case 'login':
+      return {
+        isLogin: true,
+        userInfo: action.userInfo
+      }
+    case 'logout':
+      return {
+        isLogin: false,
+        userInfo: {}
+      }
+    default:
+      return state;
+  }
+}
 
-module.exports = {reducer1}
+
+module.exports = {reducer1, loginStatus}
