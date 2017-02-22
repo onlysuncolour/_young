@@ -17,13 +17,12 @@ class Login extends React.Component{
       username: this.refs.username.value,
       password: this.refs.password.value
     };
-    http.POST('login', user)
-    // .then( (resp) => {
-    //   SOCKETIO.connect();
-    //   browserHistory.push('/');
-    // }, (err) => {
-    //   alert("账号或密码错误");
-    // })
+    http.POST('login', user).then( (resp) => {
+      SOCKETIO.connect();
+      browserHistory.push('/');
+    }, (err) => {
+      alert("账号或密码错误");
+    })
   }
   handleKeyDwon(event) {
     if (event.key == 'Enter') {

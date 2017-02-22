@@ -20,6 +20,10 @@ router.post('/', function(req, res, next) {
     res.sendStatus(403)
   }
 })
+router.get('/checkAuth', function(req, res, next) {
+  console.log('checkAuth');
+  res.send({success: true})
+})
 
 let getObjByKey = (key, value, objList) => {
   for (let i = 0; i < objList.length; i++) {

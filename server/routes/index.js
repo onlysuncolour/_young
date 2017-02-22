@@ -5,7 +5,7 @@ var events = require('../event').myEmitter
 
 let tokenList = [];
 router.get('*', function(req, res, next) {
-  // console.log(req);
+  console.log(req.url);
   // console.log(req);
   // events.emit('checkToken', next);
 })

@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router'
 import {Header} from './header/header'
 import { browserHistory } from 'react-router'
+import {AuthService} from './common/authService'
 
 class Main extends React.Component{
   constructor() {
@@ -9,12 +10,13 @@ class Main extends React.Component{
 
   }
   componentWillMount() {
-    if(!this.checkAuth()) {
-      browserHistory.push('/login');
+    if (location.pathname != '/login') {
+      AuthService.checkAuth().then(resp=> {
+
+      }, err=> {
+        browserHistory.push('/login');
+      })
     }
-  }
-  checkAuth () {
-    return false
   }
   render() {
     return (

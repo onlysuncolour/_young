@@ -54,7 +54,7 @@ let GET_fetchApi = function () {
 }
 
 let POST = function(url, params) {
-  let promise = new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     fetch(server[window.env]+url, {
       method: 'POST',
       body: JSON.stringify(params),
@@ -63,18 +63,21 @@ let POST = function(url, params) {
         'Content-Type': 'application/json'
       }
     }).then(resp => {
-      debugger;
-      // console.log(1,resp)
-      resp.json().then(obj => {
-        debugger;
-        obj
-      })
-    }).then(resp => {
-      debugger;
-      console.log(2, resp);
-    }).then(resp => {
       debugger
-      console.log(3, resp);
+      if (resp.ok) {
+        resp.json().then(obj => {
+          resolve(obj)
+        })
+      } else {
+        if ((resp.status == 403 || resp.status == 401) && location.pathname != '/login'){
+          browserHistory.push('/login');
+        } else if ((resp.status == 403 || resp.status == 401) ) {
+          reject("error");
+        } else {
+          reject(resp);
+
+        }
+      }
     })
 
   })
